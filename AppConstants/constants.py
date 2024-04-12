@@ -1,0 +1,20 @@
+URL = "https://www.reddit.com/r/"
+END = ".json"
+SUCCEED = 200
+failed = 404
+TIMEOUT = 5
+MAX_REDIRECT = 2
+DATA= "data"
+CHILDREN = "children"
+ID= "id"
+FIRST_INDEX = 0
+SUBREDDIT = "subreddit"
+SUBSCRIBERS = "_subscribers"
+NAME_PREFIX = "_name_prefixed"
+_ID = "_id"
+REDDIT_USER = "reddit_user"
+LIMIT = 50
+DEFAULT_OFFSET = 0
+
+# SQLALCHEMY_DATABASE_URL = "sqlite:///./reddit_leaderboard.db"
+SQLALCHEMY_DATABASE_URL = "mysql://root:12345@localhost:3306/reddit_leaderboard"
