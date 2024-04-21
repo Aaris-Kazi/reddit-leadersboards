@@ -1,6 +1,7 @@
 import asyncio
 import logging as log
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from AppConstants.constants import DEFAULT_OFFSET, LIMIT
 from requestmodels import UserSubredditRequest
@@ -13,6 +14,17 @@ status:dict = {"status": "success"}
 
 app = FastAPI()
 
+origins = [
+    "http://localhost:5173"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 def get_db():
     db = SessionLocal()
