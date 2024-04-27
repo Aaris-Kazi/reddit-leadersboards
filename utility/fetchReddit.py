@@ -10,8 +10,8 @@ client = AsyncClient(max_redirects=MAX_REDIRECT, timeout=TIMEOUT)
 
 async def insertUpdateData(username: str) -> None:
     response = await client.get(URL+username+END)
-    
     if response.status_code == SUCCEED:
+
         query_params = await params(response.json())
         await insert_update(query_params)
         
@@ -21,12 +21,12 @@ async def insertUpdateData(username: str) -> None:
 
 async def deleteData(id: str) -> None:
     params = await deleteParams(id)
+
     await delete(params)
     
     
 
 async def fetchData(offset: int = DEFAULT_OFFSET) -> list[dict]:
-
     params = {
         "limit": LIMIT,
         "offset": offset
@@ -39,7 +39,6 @@ async def fetchData(offset: int = DEFAULT_OFFSET) -> list[dict]:
     
 
 async def fetchAllData() -> list[dict]:
-
     rows = await fetch_retieve_all()
     result = await serializingResponseRank(rows)
 
