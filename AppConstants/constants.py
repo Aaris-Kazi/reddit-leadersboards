@@ -1,4 +1,4 @@
-URL = "https://www.reddit.com/r/"
+URL = "https://www.reddit.com/r/{}.json"
 END = ".json"
 SUCCEED = 200
 failed = 404
